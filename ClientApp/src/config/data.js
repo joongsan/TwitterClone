@@ -1,4 +1,4 @@
 export const data = {
-    API_URL : "https://localhost:44476/api/",
-    IMAGE_URL : "https://localhost:44476/Images/"
+    API_URL : "http://localhost:5274/api/",
+    IMAGE_URL : "http://localhost:5274/Images/"
 }
