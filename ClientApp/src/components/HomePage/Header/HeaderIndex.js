@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './HeaderStyle.css';
 
+/**
+ * Title to explain what Home page is desiged for
+ * @returns Header title for Homepage
+ */
 export class Header extends Component {
 
   render () {

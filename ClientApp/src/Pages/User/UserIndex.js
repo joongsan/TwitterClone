@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import {data} from '../../config/data.js'
 import { Modal } from 'react-bootstrap';
 
+/**
+ * This component is used to display user's page.
+ * Data that gets displays in this page, retrieved from
+ * SQL database (currently local but plan to change serverless db)
+ * 
+ */
+
 export default class User extends Component {
     constructor(props) {
         super(props);
@@ -88,6 +95,35 @@ export default class User extends Component {
                     onClick={()=> this.addClick()}> 
                         Add User 
                 </button>
+
+                <div className='modal fade' id='userModal' tabIndex='-1' aria-hidden='true'>
+                <div className='modal-dialog modal-lg modal-dialog-centered'>
+                    <div className='modal-content'>
+                        <div className='modal-header'>
+                            <h5 className='modal-title'> {modalTitle} </h5>
+                            <button type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </div>
+                        <div className='modal-body'>
+                            <div className='input-group mb-3'>
+                                <span className='input-group-text'>User Name</span>
+                                <input type='text' className='form-control' value={UserName} onChange={this.changeUserName}/>
+                            </div>
+                            <div className='input-group mb-3'>
+                                <span className='input-group-text'>First Name</span>
+                                <input type='text' className='form-control' value={FirstName} onChange={this.changeFirstName}/>
+                            </div>
+                            <div className='input-group mb-3'>
+                                <span className='input-group-text'>Second Name</span>
+                                <input type='text' className='form-control' value={SecondName} onChange={this.changeSecondName}/>
+                            </div>
+                            
+                            {!UserId ? <button type='button' className='btn btn-primary float-start'>Create</button> : null }
+                            {UserId ? <button type='button' className='btn btn-primary float-start'>Update</button> : null }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <table className='table table-striped'>
                     <thead>
                         <tr>
@@ -127,8 +163,8 @@ export default class User extends Component {
                     </tbody>
                 </table>
 
-
-            <div className='modal fade' id='userModal' tabIndex='-1' aria-hidden='true'>
+            
+            {/* <div className='modal fade' id='userModal' tabIndex='-1' aria-hidden='true'>
                 <div className='modal-dialog modal-lg modal-dialog-centered'>
                     <div className='modal-content'>
                         <div className='modal-header'>
@@ -155,7 +191,7 @@ export default class User extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
         )
     }

@@ -4,7 +4,13 @@ import BlogList from '../../components/HomePage/BlogList/BlogListIndex';
 import { Header } from '../../components/HomePage/Header/HeaderIndex';
 import SearchBar from '../../components/HomePage/SearchBar/SearchBarIndex';
 import { blogList } from '../../config/HardCodedData';
-import { data } from '../../config/data.js';
+import { data } from '../../config/data.js'; //this is for calling data through api. Not yet implemented
+
+/**
+ * This component will be used to return multiple blogs into one single page
+ * 
+ * @returns Home page with blogs components
+ */
 
 const Home = () => {
 
@@ -28,10 +34,10 @@ const Home = () => {
       setBlogs(blogList);
       setSearchKey('');
     }
-    
+
     return (
       <div>
-        
+
         {/* Page Header */}
         <Header />
 

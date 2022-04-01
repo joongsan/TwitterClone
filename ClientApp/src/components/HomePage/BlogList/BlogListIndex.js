@@ -1,7 +1,12 @@
 import React from 'react'
 import BlogItems from './BlogItems/BlogItemsIndex'
-
 import './BlogListStyle.css'
+
+/**
+ * Populates list of blogs using BlogItem component
+ * @param {*} param0 
+ * @returns Blog List
+ */
 
 const BlogList = ({ blogs }) => {
     return (

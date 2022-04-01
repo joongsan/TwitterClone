@@ -4,7 +4,14 @@ import Home from './Pages/Home/HomeIndex';
 import Blog from './Pages/Blog/BlogIndex';
 import User from './Pages/User/UserIndex';
 
-import './custom.css'
+import './App.css'
+
+/**
+ * 
+ * Component whichs compile all the components to display front-end
+ * 
+ * @returns Combined page of components
+ */
 
 const App = () => {
   

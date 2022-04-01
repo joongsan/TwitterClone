@@ -1,7 +1,15 @@
 import React from 'react';
 import './SearchBarStyle.css';
 
-const SearchBar = ({ value, handleSearchKey, clearSearch, formSubmit}) => {
+/**
+ * Parameters that gets returned when interacted with search bar
+ * 
+ * @param { category, handleSearchKey, clearSearch, formSubmit }
+ * 
+ * @returns category to be searched
+ */
+
+const SearchBar = ({ category, handleSearchKey, clearSearch, formSubmit}) => {
     return (
         <div className='searchBar-wrap'>
                 <form onSubmit={formSubmit}>
@@ -9,11 +17,11 @@ const SearchBar = ({ value, handleSearchKey, clearSearch, formSubmit}) => {
                         type="text" 
                         onChange={handleSearchKey} 
                         placeholder='Search By Category' 
-                        value={value} 
+                        value={category} 
                     />
-                    {value && <span onClick={clearSearch}>X</span>}
+                    {category && <span onClick={clearSearch}>X</span>}
 
-                    <button>Go</button>
+                    <button>Search</button>
                 </form>
         </div>
     );
